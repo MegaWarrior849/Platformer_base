@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 var speed = 300  # pixels/s
-var gravity = 250 # pix/s/s
-var jump_speed = -300
+var gravity = 1000 # pix/s/s
+var jump_speed = -500
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
