@@ -8,3 +8,4 @@
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 
 [node name="PlayerDemo" parent="." instance=ExtResource( 1 )]
+position = Vector2( 114, 482 )

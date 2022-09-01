@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://download.png" type="Texture" id=1]
 [ext_resource path="res://PlayerDemo.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29, 30 )
+extents = Vector2( 28, 27 )
 
 [node name="PlayerDemo" type="KinematicBody2D"]
 position = Vector2( 233, 120 )
@@ -14,7 +14,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1, 2 )
+scale = Vector2( 0.27619, 0.23431 )
 texture = ExtResource( 1 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 2 )
 shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

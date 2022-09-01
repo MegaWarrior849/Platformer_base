@@ -1,14 +1,30 @@
 extends KinematicBody2D
 
+export (int) var speed = 500
+export (int) var jump_speed = -1000
+export (int) var gravity = 2500
+
+export (float, 0, 1.0) var friction = 6
+export (float, 0, 1.0) var acceleration = 6
 var velocity = Vector2.ZERO
-var speed = 300  # pixels/s
-var gravity = 1000 # pix/s/s
-var jump_speed = -500
+
+func get_input(delta):
+	var dir = 0
+	if Input.is_action_pressed("ui_right"):
+		dir += 1
+		$Sprite.flip_h = true
+	if Input.is_action_pressed("ui_left"):
+		dir -= 1
+		$Sprite.flip_h = false
+	if dir != 0:
+		velocity.x = lerp(velocity.x, dir * speed, acceleration * delta)
+	else:
+		velocity.x = lerp(velocity.x, 0, friction * delta)
 
 func _physics_process(delta):
+	get_input(delta)
 	velocity.y += gravity * delta
-	velocity.x = Input.get_axis("ui_left", "ui_right") * speed
-	#var collision = move_and_collide(velocity * delta)
 	velocity = move_and_slide(velocity, Vector2.UP)
-	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
-		velocity.y = jump_speed
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = jump_speed
