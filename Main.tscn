@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://PlayerDemo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Spikey Bois.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node2D"]
-
-[node name="Platform" parent="." instance=ExtResource( 2 )]
+script = ExtResource( 4 )
 
 [node name="PlayerDemo" parent="." instance=ExtResource( 1 )]
 position = Vector2( 114, 482 )
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 260, 30 )
+
+[node name="SpikeyBois" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2572, 418 )
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2654, 358 )

@@ -1,17 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://download.png" type="Texture" id=1]
 [ext_resource path="res://PlayerDemo.gd" type="Script" id=2]
+[ext_resource path="res://stormy-night-over-byron-bay-673747736-5c48ab2a46e0fb0001ef2e87.jpg" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 27 )
 
 [node name="PlayerDemo" type="KinematicBody2D"]
-position = Vector2( 233, 120 )
+position = Vector2( 220, 130 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Sprite" type="Sprite" parent="Camera2D"]
+position = Vector2( 0, -4.49997 )
+scale = Vector2( 0.354254, 0.276616 )
+texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -1, 2 )
@@ -22,6 +31,3 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 2 )
 shape = SubResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true

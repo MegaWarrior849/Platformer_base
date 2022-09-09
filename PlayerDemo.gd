@@ -20,6 +20,10 @@ func get_input(delta):
 		velocity.x = lerp(velocity.x, dir * speed, acceleration * delta)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction * delta)
+	if velocity.y > 0:
+		$Sprite.flip_v = true
+	else:
+		$Sprite.flip_v = false
 
 func _physics_process(delta):
 	get_input(delta)
@@ -28,3 +32,5 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed
+	if position.y > 1000:
+		get_tree().reload_current_scene()
