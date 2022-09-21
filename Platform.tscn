@@ -11,7 +11,7 @@ extents = Vector2( 762, 24.7344 )
 extents = Vector2( 98.5, 25.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 106.5, 277 )
+extents = Vector2( 106.5, 424 )
 
 [node name="Platform" type="Node2D"]
 
@@ -91,7 +91,7 @@ scale = Vector2( 0.26131, 1 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
-position = Vector2( -340.5, 314 )
+position = Vector2( -340.5, 163 )
 shape = SubResource( 3 )
 
 [node name="Air Platform 6" type="KinematicBody2D" parent="."]

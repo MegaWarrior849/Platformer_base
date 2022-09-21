@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stormy-night-over-byron-bay-673747736-5c48ab2a46e0fb0001ef2e87.jpg-5ad2ac8f35a4dc952a5fa79e8b38dd6b.stex"
+path="res://.import/185032.jpg-16e60c41cfb2833c521ac72edb1e88d4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stormy-night-over-byron-bay-673747736-5c48ab2a46e0fb0001ef2e87.jpg"
-dest_files=[ "res://.import/stormy-night-over-byron-bay-673747736-5c48ab2a46e0fb0001ef2e87.jpg-5ad2ac8f35a4dc952a5fa79e8b38dd6b.stex" ]
+source_file="res://185032.jpg"
+dest_files=[ "res://.import/185032.jpg-16e60c41cfb2833c521ac72edb1e88d4.stex" ]
 
 [params]
 
