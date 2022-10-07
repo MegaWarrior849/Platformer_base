@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export (int) var speed = 350
-export (int) var jump_speed = -1050
-export (int) var gravity = 2600
+export (int) var speed = 0
+export (int) var jump_speed = 0
+export (int) var gravity = 0
 
 export (float, 0, 1.0) var friction = 6
 export (float, 0, 1.0) var acceleration = 6
@@ -24,12 +24,7 @@ func get_input(delta):
 		velocity.x = lerp(velocity.x, dir * speed, acceleration * delta)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction * delta)
-	if Input.is_action_pressed("crouch"):
-		$Sprite.scale.y = 0.138
-		$CollisionShape2D.scale.y = 0.5
-	else:
-		$Sprite.scale.y = 0.276
-		$CollisionShape2D.scale.y = 1
+	
 
 func _physics_process(delta):
 	get_input(delta)

@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://download.png" type="Texture" id=1]
+[ext_resource path="res://output-onlinepngtools.png" type="Texture" id=1]
 [ext_resource path="res://PlayerDemo.gd" type="Script" id=2]
-[ext_resource path="res://185032.jpg" type="Texture" id=3]
+[ext_resource path="res://beams (1).png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28, 27 )
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 37.322, 1.164, 18, 17 )
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.307263, 0.837989, 0.988827 )
+colors = PoolColorArray( 0.204968, 0.897542, 0.0666145, 1, 0.228917, 0.467855, 0.210169, 1, 0.124924, 0.292074, 0.111809, 1, 0.00805194, 0.061605, 0.00385031, 1 )
 
 [node name="PlayerDemo" type="KinematicBody2D"]
 position = Vector2( 220, 130 )
@@ -17,17 +23,26 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="Sprite" type="Sprite" parent="Camera2D"]
-position = Vector2( -19, -2.99998 )
-scale = Vector2( 0.546875, 0.551852 )
-texture = ExtResource( 3 )
-
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1, 2 )
-scale = Vector2( 0.27619, 0.23431 )
+position = Vector2( -1.19209e-06, 3.5 )
+scale = Vector2( 0.0651163, 0.0765896 )
 texture = ExtResource( 1 )
 flip_h = true
+region_rect = Rect2( -1560.23, 638.411, 0, 2.92389 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 2 )
-shape = SubResource( 1 )
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite"]
+position = Vector2( -46.0715, 13.0563 )
+amount = 15
+lifetime = 0.8
+texture = SubResource( 2 )
+spread = 180.0
+initial_velocity = 500.0
+scale_amount = 10.0
+scale_amount_random = 0.5
+color = Color( 1, 1, 1, 0.392157 )
+color_ramp = SubResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 3.5 )
+scale = Vector2( 0.0651163, 0.0765896 )
+polygon = PoolVector2Array( -399.286, 293.774, -399.286, 241.547, -383.928, 241.547, -368.571, 215.434, -322.5, 215.434, -322.5, 189.321, -291.786, 189.321, -291.786, 163.208, -261.071, 163.208, -261.071, 137.094, -230.357, 137.094, -230.357, 110.981, -199.643, 110.981, -199.643, 71.8114, -230.357, 71.8114, -230.357, 45.6981, -261.071, 45.6981, -261.071, 84.8679, -337.857, 84.8679, -353.214, 84.8679, -353.214, 58.7548, -368.571, 58.7548, -368.571, -32.6415, -353.214, -32.6415, -337.857, -32.6415, -337.857, -58.7546, -307.143, -58.7546, -307.143, -84.8679, -291.786, -84.8679, -291.786, -110.981, -261.071, -110.981, -261.071, -163.208, -199.643, -163.208, -199.643, -215.434, -199.643, -228.49, -230.357, -228.49, -230.357, -254.604, -199.643, -254.604, -199.643, -280.717, -153.571, -280.717, -153.571, -254.604, -122.857, -254.604, -122.857, -280.717, -92.1428, -280.717, -92.1428, -306.83, -15.3572, -306.83, -15.3572, -280.717, 15.3572, -280.717, 15.3572, -254.604, 76.7856, -254.604, 76.7856, -228.49, 92.1428, -228.49, 92.1428, -202.377, 92.1428, -189.321, 122.857, -189.321, 122.857, -163.208, 153.571, -163.208, 153.571, -137.094, 184.286, -137.094, 184.286, -110.981, 153.571, -110.981, 153.571, -58.7546, 184.286, -58.7546, 184.286, -32.6415, 199.643, -32.6415, 199.643, -6.52832, 199.643, 6.52832, 261.071, 6.52832, 261.071, 32.6416, 322.5, 32.6416, 322.5, 58.7548, 368.571, 58.7548, 368.571, 84.8679, 399.286, 84.8679, 399.286, 110.981, 368.571, 110.981, 368.571, 137.094, 322.5, 137.094, 322.5, 163.208, 261.071, 163.208, 261.071, 189.321, 215, 189.321, 199.643, 189.321, 199.643, 215.434, 184.286, 215.434, 184.286, 293.774, -76.7856, 293.774 )
