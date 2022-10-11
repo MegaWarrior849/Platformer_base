@@ -30,4 +30,5 @@ position = Vector2( -386, 289 )
 offset = Vector2( 200, 75 )
 transform = Transform2D( 1, 0, 0, 1, 200, 75 )
 
+[connection signal="body_entered" from="LightningThing" to="." method="_on_LightningThing_body_entered"]
 [connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
