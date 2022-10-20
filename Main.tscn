@@ -4,7 +4,7 @@
 [ext_resource path="res://Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Spikey Bois.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Main.gd" type="Script" id=4]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://C1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://LightningThing.tscn" type="PackedScene" id=6]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=7]
 
@@ -12,7 +12,7 @@
 script = ExtResource( 4 )
 
 [node name="PlayerDemo" parent="." instance=ExtResource( 1 )]
-position = Vector2( 179, -337 )
+position = Vector2( 233, 460 )
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 260, 30 )
@@ -20,15 +20,24 @@ position = Vector2( 260, 30 )
 [node name="SpikeyBois" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2572, 418 )
 
-[node name="Coin" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2654, 358 )
-
 [node name="LightningThing" parent="." instance=ExtResource( 6 )]
 position = Vector2( -386, 289 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
-offset = Vector2( 200, 75 )
-transform = Transform2D( 1, 0, 0, 1, 200, 75 )
+offset = Vector2( 425, 75 )
+transform = Transform2D( 1, 0, 0, 1, 425, 75 )
+
+[node name="C1" parent="." instance=ExtResource( 5 )]
+position = Vector2( -407, -308 )
+
+[node name="C2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2652, 359 )
+
+[node name="C3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1280, -559 )
 
 [connection signal="body_entered" from="LightningThing" to="." method="_on_LightningThing_body_entered"]
 [connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
+[connection signal="body_entered" from="C1" to="." method="_on_C1_body_entered"]
+[connection signal="body_entered" from="C2" to="." method="_on_C2_body_entered"]
+[connection signal="body_entered" from="C3" to="." method="_on_C3_body_entered"]

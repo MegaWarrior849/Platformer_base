@@ -37,7 +37,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 28.0
+radius = 27.0
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
@@ -71,3 +71,4 @@ gravity = Vector2( 0, 0 )
 initial_velocity = 100.0
 angle = 90.0
 angle_random = 0.5
+color = Color( 1, 1, 1, 0.784314 )

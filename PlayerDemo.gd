@@ -33,5 +33,5 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed
-	if position.y > 1000:
+	if position.y > 1500:
 		get_tree().reload_current_scene()

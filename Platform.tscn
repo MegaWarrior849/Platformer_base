@@ -1,15 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Grass Block.png" type="Texture" id=1]
 [ext_resource path="res://Dirt Block.png" type="Texture" id=2]
 [ext_resource path="res://41-414297_cliff-clipart-transparent-hd-png-download.jpg" type="Texture" id=3]
 [ext_resource path="res://texture-platformers-pixel-art-vector-brick-stone-wall-white-77244136.jpg" type="Texture" id=4]
+[ext_resource path="res://beams (1).png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 762, 24.7344 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 98.5, 25.5 )
+extents = Vector2( 96.75, 25.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 106.5, 424 )
@@ -20,7 +21,18 @@ atlas = ExtResource( 4 )
 region = Rect2( 249, 667.562, 965, 141 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 15.25, 141 )
+extents = Vector2( 16.5, 141 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 44, 24.5 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 34.976, 116.068, 22, 16 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 50, 7.5 )
 
 [node name="Platform" type="Node2D"]
 
@@ -107,12 +119,12 @@ shape = SubResource( 3 )
 position = Vector2( 1445, 183 )
 
 [node name="Sprite" type="Sprite" parent="Air Platform 6"]
-position = Vector2( 670, 42 )
+position = Vector2( 669, 56 )
 scale = Vector2( 2, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Air Platform 6"]
-position = Vector2( 667, 57 )
+position = Vector2( 668, 71 )
 shape = SubResource( 2 )
 
 [node name="Air Platform 7" type="KinematicBody2D" parent="."]
@@ -136,5 +148,88 @@ scale = Vector2( 0.29411, 0.26412 )
 texture = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2( 228.75, 63 )
+position = Vector2( 227.5, 63 )
 shape = SubResource( 4 )
+
+[node name="Air Platform 8" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Air Platform 8"]
+position = Vector2( -667, -239 )
+scale = Vector2( 2, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air Platform 8"]
+position = Vector2( -668, -225 )
+shape = SubResource( 2 )
+
+[node name="Air Platform 9" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Air Platform 9"]
+position = Vector2( 304, -287 )
+scale = Vector2( 0.910891, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air Platform 9"]
+position = Vector2( 304, -270.5 )
+shape = SubResource( 6 )
+
+[node name="Air Platform 10" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Air Platform 10"]
+position = Vector2( 691, -366 )
+scale = Vector2( 2, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air Platform 10"]
+position = Vector2( 689, -352 )
+shape = SubResource( 2 )
+
+[node name="InvisPlat 1" type="KinematicBody2D" parent="."]
+position = Vector2( -40, 0 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="InvisPlat 1"]
+position = Vector2( -177, -90 )
+scale = Vector2( 5, 1 )
+lifetime = 0.5
+texture = SubResource( 8 )
+gravity = Vector2( 0, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisPlat 1"]
+position = Vector2( -184, -90.5 )
+shape = SubResource( 7 )
+
+[node name="Air Platform 11" type="KinematicBody2D" parent="."]
+position = Vector2( 40, 0 )
+
+[node name="Sprite" type="Sprite" parent="Air Platform 11"]
+position = Vector2( 1454, 739 )
+scale = Vector2( 2, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air Platform 11"]
+position = Vector2( 1452, 753 )
+shape = SubResource( 2 )
+
+[node name="Air Platform 12" type="KinematicBody2D" parent="."]
+position = Vector2( 80, 0 )
+
+[node name="Sprite" type="Sprite" parent="Air Platform 12"]
+position = Vector2( 1067, 899 )
+scale = Vector2( 2, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air Platform 12"]
+position = Vector2( 1067, 913 )
+shape = SubResource( 2 )
+
+[node name="Air Platform 13" type="KinematicBody2D" parent="."]
+position = Vector2( 120, 0 )
+
+[node name="Sprite" type="Sprite" parent="Air Platform 13"]
+position = Vector2( 483, 948 )
+scale = Vector2( 2, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Air Platform 13"]
+position = Vector2( 484, 965 )
+shape = SubResource( 2 )
